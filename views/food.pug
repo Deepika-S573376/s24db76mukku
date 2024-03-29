@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  
+  div.container-fluid
+    div.row
+      -
+        let results = [
+          { food_type: 'Pizza', food_size: 'Medium', food_price: 10 },
+          { food_type: 'Burger', food_size: 'Large', food_price: 08 },
+          { food_type: 'Salad', food_size: 'Small', food_price: 06 }
+        ]
+        
+      each food,index in results
+        .col-sm-2 
+        div.col-sm-2(onclick=`buy(${index})`)
+        
+          p food Type: #{food.food_type}
+          p Size: #{food.food_size}
+          p Price: $#{food.food_price.toFixed(2)}
+
+  a(href="/") Back to index
+
+    script. 
+        function buy(index) {
+            alert(`You purchased item ${index}`);
+        }
