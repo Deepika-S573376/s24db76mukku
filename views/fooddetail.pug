@@ -1,0 +1,24 @@
+extends layout
+block content
+  h1= title
+
+  if toShow == null
+    h2 No instance to show
+  else
+    - let foodid = toShow._id
+    - let food_type = toShow.food_type
+    - let food_size = toShow.food_size
+    - let food_price = toShow.food_price 
+    div
+      div.row
+        div.foodAttr.mr-3 food ID is:
+        div #{foodid}
+      div.row
+        div.foodAttr.mr-3 food Type is:
+        div #{food_type}
+      div.row
+        div.foodAttr.mr-3 food Size is:
+        div #{food_size}
+      div.row
+        div.foodAttr.mr-3 food Price is:
+        div #{food_price}
