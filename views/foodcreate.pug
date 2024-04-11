@@ -2,6 +2,10 @@ extends layout
 
 block content
   h1= title
+  style. 
+      body{
+        background-color:red;
+      }
   form(id='foodForm', action="/resource/food", method="POST")
     div.form-group
       label.foodAttr(for='food_type') food type
