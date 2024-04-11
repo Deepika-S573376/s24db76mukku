@@ -21,17 +21,16 @@ block content
   script.
     document.forms['foodForm'].addEventListener('submit', (event) => {
       event.preventDefault();
-      // TODO do something here to show user that form is being submitted
       fetch(event.target.action, {
         method: 'POST',
-        body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+        body: new URLSearchParams(new FormData(event.target)) 
       }).then((resp) => {
-        return resp.json(); // or resp.text() or whatever the server sends
+        return resp.json(); 
       }).then((body) => {
         alert("Save succeeded");
-        // TODO handle body
+       
       }).catch((error) => {
-        // TODO handle error
+       
         alert("Save failed " + error );
       });
     });ss

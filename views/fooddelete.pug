@@ -30,23 +30,23 @@ block content
         
     script.
         function cancel() {
-            // Go back to the home page for the food collection
+            
             window.location.href='/food'
         }
     script.
         function deleteOnid() {
             console.log("starting delete")
-            // delete first
+           
             fetch(actionid, {
-                method: 'DELETE' // Don't need a body for the delete
+                method: 'DELETE' 
             }).then((resp) => {
-                return resp.text(); // or resp.text() or whatever the server sends
+                return resp.text(); 
             }).then((body) => {
                 alert("Delete succeeded")
                 window.location.href='/food'
-                // TODO handle body
+                
             }).catch((error) => {
-                // TODO handle error
+                
                 alert("Delete failed " + error )
             });
         }
